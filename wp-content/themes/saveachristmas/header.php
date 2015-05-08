@@ -172,7 +172,7 @@
 				<a href="/" title="Save A Christmas" rel="home" class="site-branding">
 					<hgroup>
 						<h1 class="site-title">
-							Hey Seth 
+							Hey Seth
 
 							<span><?php bloginfo('name'); ?></span>
 						</h1>
