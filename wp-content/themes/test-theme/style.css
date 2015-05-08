@@ -1,0 +1,86 @@
+/*
+Theme Name: testing-it
+Author: Jordyn
+Version: 0.1
+*/
+
+body{
+	font-family: Tahoma;
+	color: #800080;
+}
+
+div.container{
+	width: 960px;
+	margin: 0 auto;
+}
+
+header {
+	border: 2px solid red;
+	padding-left: 15px;
+}
+header > h1 {
+	text-align: center;
+}
+div.post{
+	background-color: #ffff00;
+}
+
+a:link, a:visited {
+	color: orange;
+	text-decoration: none;
+}
+
+footer{
+	border-top: 1px solid blue;
+	border-bottom: 1px solid #0000ff;
+	padding-left: 15px;
+}
+
+/* Navigation Menus */
+
+.site-nav ul {
+	margin: 0;
+	padding: 0;
+}
+
+.site-nav ul::after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+
+.site-nav ul li {
+	float: left;
+	list-style: none;
+}
+
+/* Primary Navigation Menu */
+
+
+.primary-nav li {
+	margin-right: 5px;
+	padding: 10px 18px;
+	border: 1px solid #bbb;
+}
+
+.primary-nav li:hover {
+	background-color: #ECECec;
+}
+
+.primary-nav li.current-menu-item, .primary-nav li.current-page-ancestor {
+	background-color: purple;
+}
+
+.primary-nav li.current-menu-item a:visited,
+.primary-nav li.current-menu-item a:link,
+.primary-nav li.current-page-ancestor a:visited,
+.primary-nav li.current-page-ancestor a:link {
+	color: #ddd;
+}
+
+.primary-nav a:link, .primary-nav a:visited {
+
+	border-bottom: none;
+	text-decoration: none;
+}

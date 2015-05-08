@@ -1,0 +1,277 @@
+/*
+Theme Name: Practice-Hiking-Trailz
+Author: JT
+Author URI: http://wordpress.org/
+Description: Hiking Trails Project practice run
+Version: 0.1
+
+*/
+
+
+/*======================================================================================================================
+/*=========================================================== Main Foundation/ Reused CSS ==============================
+/*======================================================================================================================*/
+
+h3, .tagline h2 {
+	margin-bottom: 0;
+	margin-top: 0;
+	padding-top: 10px;
+}
+
+i {
+	margin-right:10px;
+}
+
+.displayNone {
+	display: none;
+}
+a {
+	text-decoration: none;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: #ddd;
+	margin: 0;
+	font-family: 'Open Sans';
+}
+
+
+
+
+
+
+
+header {
+	background-color: red;
+}
+
+.site-nav ul{
+	margin: 0;
+	padding: 0;
+}
+
+.site-nav ul::after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+
+.site-nav ul li {
+		/*float: left;*/
+	list-style: none;
+}
+
+/***************************************
+Header and Navbar
+****************************************/
+
+nav {
+	background-color: rgba(20,20,20,0);
+	text-align: center;
+	height: 100px;
+	position: relative;
+}
+
+header .logo {
+	font-family: 'Rock Salt';
+	position: absolute;
+	left: 50px;
+	top: 10px;
+	font-size: 25pt;
+	text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.4);
+}
+
+.logo > a {
+	color: rgb(240, 172, 66);
+	text-decoration: none;
+}
+
+.logo > a:hover {
+	background-color: rgba(255, 255, 255, 0.27);
+	/*text-decoration: none;*/
+}
+
+/*.navigation  {*/
+	/*text-align: center;*/
+	/*padding-top: 5px;*/
+	/*background-color: rgba(0,0,0,0,0);*/
+	/*height: 100px;*/
+	/*width: 200px;*/
+	/*display: inline-block;*/
+	/*text-align: center;*/
+	/*color: #aaa;*/
+	/*text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.4);*/
+/*}*/
+
+.primary-nav li {
+	text-align: center;
+	padding-top: 5px;
+	background-color: rgba(0,0,0,0,0);
+	height: 100px;
+	width: 200px;
+	display: inline-block;
+	text-align: center;
+	text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.4);
+}
+
+.primary-nav li:hover {
+	background-color: rgba(255, 255, 255, 0.27);
+}
+
+.primary-nav li a {
+	text-decoration: none;
+	color: #aaa;
+
+}
+/*.navigation:hover {*/
+	/*background-color: rgba(255,255,255,.1);*/
+/*}*/
+
+.options div {
+	padding: 10px;
+}
+
+.options div:first-child {
+	border-bottom: 1px solid #bbb;
+	margin: 5px;
+	color: rgb(240, 172, 66);
+	font-size: 18px;
+	text-transform: uppercase;
+}
+
+.options div:last-child {
+	margin: 5px;
+	font-size: 12px;
+	font-weight: 300px;
+	color: #ddd;
+}
+
+.user-options {
+	font-size: 26pt;
+	text-transform: uppercase;
+	position: absolute;
+	right: 50px;
+	top: 30px;
+}
+
+.user-options a:hover {
+	color: #ddd;
+}
+
+.user-options a {
+	color:white;
+	text-decoration: none;
+	text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.4);
+}
+
+.hero {
+	height: 550px;
+	position: relative;
+}
+
+.photo {
+	height: 550px;
+	background-size: cover;
+}
+
+.title {
+	background-color: rgba(255,255,255,0);
+	position: absolute;
+	left: 10%;
+	top: 60%;
+}
+
+.title h1 {
+	margin-top: 0;
+	margin-bottom: 5px;
+	color: #ddd;
+	text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.4);
+}
+
+.fweather {
+	color: #ddd;
+	font-size: 25pt;
+	/*padding-left: 10px;*/
+	text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.4);
+}
+
+.focus .fweather {
+	font-size: 18pt;
+	padding-top: 0;
+}
+
+.hashtag, .hash {
+	color: #ddd;
+	font-size: 25pt;
+	text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.4);
+}
+/*****************************
+Footer CSS
+*****************************/
+
+footer {
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,0.38) 0%, rgba(255,255,255,0.6) 40%, rgba(221,221,221,1) 100%), url('images/footertexture.jpg');
+	height: 150px;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+}
+
+
+.logo-footer {
+	position: absolute;
+	left: 50px;
+	bottom: 30px;
+	font-size: 28pt;
+	/*background-color: #777;*/
+	font-family: 'Rock Salt';
+}
+
+.logo-footer > a{
+	color: rgb(240, 172, 66);
+	text-decoration: none;
+	text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.4);
+}
+
+.about {
+	position: absolute;
+	bottom: 30px;
+	margin-left: -50px;
+	color: rgb(171, 104, 0);
+}
+
+.about ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.about li {
+	display: inline-block;
+}
+
+.about li:first-child {
+	border-right: 2px solid rgb(171, 104, 0);
+	padding-right: 10px;
+}
+.about  a{
+	color: rgb(171, 104, 0);
+	text-decoration: none;
+	text-shadow: 2px 2px 2px rgba(200, 200, 200, 0.8);
+}
+
+.social-logos {
+	position: absolute;
+	right: 50px;
+	bottom: 40px;
+}
+
+.social-logos > a {
+	text-decoration: none;
+	color: black
+}
+
+

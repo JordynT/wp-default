@@ -1,0 +1,9 @@
+/*
+Theme Name:     Jordyns_bootstrap
+Template:       <br />
+<b>Notice</b>:  Undefined variable: parent_template_name in <b>/srv/www/wordpress-default/wp-content/plugins/one-click-child-theme/templates/rtl-css.php</b> on line <b>3</b><br />
+
+
+Right to Left text support.
+*/
+@import url("../twentyfifteen/rtl.css");
