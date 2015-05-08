@@ -20,11 +20,8 @@ function site_options(){
 	$section_network_general->add_part( $network_hide_wp_updates = new sm_textfield( 'site_featured_header_post_id', array (
 		'label'          => 'Enter page ID of for pulling site featured header'
 	) ) );
-	$section_network_general->add_part( $network_hide_wp_updates = new sm_textfield( 'site_featured_header_button_text', array (
-		'label'          => 'What text would you like to see in the main header\'s button?'
-	) ) );
 	$section_network_general->add_part( $network_hide_wp_updates = new sm_media_upload( 'site_featured_header_button_image', array (
-		'label'          => 'What Immage would you like to see in the main header\'s button?'
+		'label'          => 'What Image would you like to see in the main header\'s button?'
 	) ) );
 	$section_network_general->add_part( $network_hide_wp_updates = new sm_textfield( 'site_featured_copyright', array (
 		'label'          => 'Enter what txt you would like to see after your copyright image. (suggestion: YYYY. Site Title . All Rights Reserved'
