@@ -12,11 +12,11 @@ if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_quer
 			<div class="campaign-feature-content">
 				<h3><?php the_title(); ?></h3>
 				<?php the_content(); ?>
-<!--				<p>-->
-<!--					<a href="#widget_campaignify_hero_contribute-2">-->
-<!--						<img src="http://saveachristmas.wpengine.com/wp-content/uploads/edd/2013/11/saveachristmas-website-getstarted.png" alt="saveachristmas-website-getstarted" width="579" height="185" style"width:="" 100%;="" height:="" auto;"="">-->
-<!--					</a>-->
-<!--				</p>-->
+				<p>
+					<a href="#widget_campaignify_hero_contribute-2">
+						<img src="<?php echo get_custom_option('site_featured_header_button_image'); ?>" alt="saveachristmas-website-getstarted" width="579" height="185" style"width:="" 100%;="" height:="" auto;"="">
+					</a>
+				</p>
 			</div>
 		</div>
 	</section>
