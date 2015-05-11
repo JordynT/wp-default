@@ -19,6 +19,7 @@ SET time_zone = "+00:00";
 --
 -- Database: `wordpress_default`
 --
+DROP DATABASE IF EXISTS `wordpress_default`;
 CREATE DATABASE IF NOT EXISTS `wordpress_default` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `wordpress_default`;
 
