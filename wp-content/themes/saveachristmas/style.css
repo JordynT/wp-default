@@ -139,6 +139,7 @@ Version: 0.1
 	.campaignify-pledge-boxes .campaignify-pledge-box:nth-child(2n) {
 		margin-right: 0 !important;
 	}
+    
 
 	/** Widgets */
 	.widget_campaignify_campaign_widgets .widgets-1 > .campaign-widget-widget,
