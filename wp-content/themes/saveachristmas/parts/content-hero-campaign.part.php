@@ -9,7 +9,7 @@ $goal = $campaign_options['goal'];
 $total_pledged = ''; //sum(); //the total sum of the donations so far
 $total_perc_funded = ''; // floor(($total_pledged / $goal) * 100) //the percentage of funding of the goal
 
-$date = strtotime($campaign_options['end_date']);
+$date = 12312313; //strtotime($campaign_options['end_date']);
 
 $remaining = $date - time();
 $days_remaining = floor($remaining / 86400);
