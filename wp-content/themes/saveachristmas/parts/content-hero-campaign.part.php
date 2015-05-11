@@ -27,8 +27,7 @@ $days_remaining = floor($remaining / 86400);
 	<?php  endwhile; ?>
 
 		<div class="donation-donate">
-			<a href="#"
-			   class="button button-primary contribute"><?php echo get_custom_option('site_featured_hero_button'); ?></a>
+			<a href="#" class="button button-primary contribute eModal-1"><?php echo get_custom_option('site_featured_hero_button'); ?></a>
 		</div>
 
 		<div class="donation-share">
