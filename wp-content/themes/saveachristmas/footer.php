@@ -23,15 +23,8 @@
 		</footer><!-- #colophon -->
 	</div><!-- #page -->
 
-
-	<script type='text/javascript' src='http://saveachristmas.com/wp-includes/js/masonry.min.js?ver=3.1.2'></script>
-	<script type='text/javascript'
-			src='http://saveachristmas.com/wp-includes/js/jquery/jquery.masonry.min.js?ver=3.1.2'></script>
-	<script type='text/javascript'
-			src='http://saveachristmas.com/wp-content/themes/campaignify/js/jquery.flexslider-min.js?ver=2.1'></script>
-	<!-- <script type='text/javascript' src='http://saveachristmas.com/wp-content/themes/campaignify/js/jquery.magnific-popup.min.js?ver=2.1.4'></script> -->
-	<script type='text/javascript'
-			src='http://saveachristmas.com/wp-content/themes/campaignify/js/jquery.fittext.js?ver=2.1'></script>
+	<script type='text/javascript' src='http://saveachristmas.com/wp-content/themes/campaignify/js/jquery.flexslider-min.js?ver=2.1'></script>
+	<script type='text/javascript' src='http://saveachristmas.com/wp-content/themes/campaignify/js/jquery.fittext.js?ver=2.1'></script>
 	<script type='text/javascript'>
 		/* <![CDATA[ */
 		var campaignifySettings = {
@@ -48,8 +41,7 @@
 		};
 		/* ]]> */
 	</script>
-	<script type='text/javascript'
-			src='http://saveachristmas.com/wp-content/themes/campaignify/js/campaignify.js?ver=20130603'></script>
+	<script type='text/javascript' src='http://saveachristmas.com/wp-content/themes/campaignify/js/campaignify.js?ver=20130603'></script>
 	<?php wp_footer(); ?>
 </body>
 </html>
