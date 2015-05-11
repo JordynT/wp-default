@@ -1,6 +1,4 @@
-		hey jordyn
-
-		<footer id="colophon" class="site-footer" role="contentinfo">
+<footer id="colophon" class="site-footer" role="contentinfo">
 
 			<div class="footer-social">
 				<a class="rss" href="http://saveachristmas.com/feed/"><i class="icon-rss"></i></a>
