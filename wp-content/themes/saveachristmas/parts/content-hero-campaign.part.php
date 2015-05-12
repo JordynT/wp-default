@@ -6,8 +6,9 @@ $myCampaigns->the_post();
 
 $campaign_options = maybe_unserialize(get_post_meta($post->ID, 'campaign_options', true));
 $goal = $campaign_options['goal'];
-$total_pledged = ''; //sum(); //the total sum of the donations so far
-$total_perc_funded = ''; // floor(($total_pledged / $goal) * 100) //the percentage of funding of the goal
+//echo $goal;
+$total_pledged = 100; //sum(); //the total sum of the donations so far
+$total_perc_funded = 25; // floor(($total_pledged / $goal) * 100) //the percentage of funding of the goal
 
 $date = strtotime($campaign_options['end_date']);
 
@@ -17,10 +18,10 @@ $days_remaining = floor($remaining / 86400);
 <div class="campaign-hero loading has-slideshow">
 	<div class="campaign-hero-donate-options animated fadeInDown">
 		<div class="donation-progress-bar">
-			<span class="donation-progress-percent"><?php echo $total_perc_funded; ?></span>
-			<span class="donation-progress-funded"><?php echo $total_pledged; ?> <em>Raised</em></span>
+			<span class="donation-progress-percent"><?php echo $total_perc_funded; ?> %</span>
+			<span class="donation-progress-funded"><?php echo $total_pledged; ?> <em> Pledges Raised</em></span>
 
-			<span class="donation-progress-togo"><?php echo $days_remaining; ?></span>
+			<span class="donation-progress-togo"><?php echo $days_remaining; ?> Days left</span>
 
 			<div class="donation-progress" style="width: 23%"></div>
 		</div>
