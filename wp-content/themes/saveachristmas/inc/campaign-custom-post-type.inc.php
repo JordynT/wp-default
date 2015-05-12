@@ -34,16 +34,14 @@ function create_custom_posttype()
 // Hooking up our function to theme setup
 add_action('init', 'create_custom_posttype');
 
-function sc_add_campaign_metaboxes (){
-//	die(__FILE__);
-	add_meta_box(
+function sc_add_campaign_metaboxes () {
+	add_meta_box (
 		'campaign_metabox', 
 		'Campaign Options', 
 		'sc_campaign_callback', 
 		'campaigns', 
-		'normal', 
-		'high'
-			);
+		'side'
+	);
 }
 
 add_action('add_meta_boxes', 'sc_add_campaign_metaboxes');
@@ -52,10 +50,11 @@ add_action('add_meta_boxes', 'sc_add_campaign_metaboxes');
 function sc_campaign_callback($post){
 	//setup default form values and pull in any values found into
 	wp_nonce_field( 'sc_metabox_nonce', 'sc_nonce_field');
-	$values = never_empty_values($post->ID,['end-date','start-date','goal', 'is_active', 'is_fully_booked']);
+	$values = never_empty_values($post->ID,['end-date','start-date','goal', 'is_fully_booked']);
+	$is_active = get_post_meta($post->ID, 'is_active', true);
 	//build form
 
-	$html = '<div><input type="checkbox" name="is_active" value="'. $values['is_active'] .'" /><label><strong> Is Active Campaign?</strong></label></div>';
+	$html = '<div><input type="checkbox" name="is_active" value="1" '. (!empty($is_active) ? ' checked="checked" ' : null) .' /><label><strong> Is Active Campaign?</strong></label></div>';
 	$html .= '<div><input type="checkbox" name="is_fully_booked" value="'. $values['is_fully_booked'] .'" /><label><strong> Is Fully Booked?</strong></label></div>';
 	$html .= '<p><label for="annual-campaign-start-date">';
 	$html .= '<strong>Start date: </strong>';
@@ -93,10 +92,12 @@ function sc_save_campaign_metabox_data($post_id){
 			'start-date' => esc_attr($_POST['annual-campaign-start-date']),
 			'end-date' => esc_attr($_POST['annual-campaign-end-date']),
 			'goal' => esc_attr($_POST['annual-campaign-goal']),
-			'is_active' => esc_attr($_POST['is_active']),
 			'is_fully_booked' => esc_attr($_POST['is_fully_booked'])
 		];
 		update_post_meta($post_id, 'campaign_options', $my_campaign_options);
+
+			
+		update_post_meta($post_id, 'is_active', esc_attr($_POST['is_active']));
 	}
 }
 add_action('save_post', 'sc_save_campaign_metabox_data');
