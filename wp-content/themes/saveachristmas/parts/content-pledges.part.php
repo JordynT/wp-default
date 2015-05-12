@@ -17,7 +17,7 @@
 				$remaining = $limit - $sold;
 				$percent = ($sold/$limit) * 100;
 				?>
-					<div class="campaignify-pledge-box popmake-donations" data-price="<?php echo $data_price; ?>-0">
+					<div class="campaignify-pledge-box <?php echo get_custom_option('site_featured_modal_css_class'); ?>" data-price="<?php echo $data_price; ?>-0">
 						<h3><?php the_title(); ?></h3>
 
 						<div class="donation-progress-bar">

@@ -20,6 +20,9 @@ function site_options(){
 	$section_network_general->add_part( $network_hide_wp_updates = new sm_textfield( 'site_featured_header_post_id', array (
 		'label'          => 'Enter page ID of for pulling site featured header'
 	) ) );
+	$section_network_general->add_part( $network_hide_wp_updates = new sm_textfield( 'site_featured_modal_css_class', array (
+		'label'          => 'Enter css class name for current modal'
+	) ) );
 	$section_network_general->add_part( $network_hide_wp_updates = new sm_media_upload( 'site_featured_header_button_image', array (
 		'label'          => 'What Image would you like to see in the main header\'s button?'
 	) ) );
