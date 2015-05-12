@@ -38,11 +38,12 @@ static function donation_form(){
 		<form action="" method="post">
 			First Name: <input type="text" name="post_title" required/><br/>
 			Donation:
-			<textarea rows="10" name="post_content" cols="20"></textarea>
+			<input type="text" name="post_content"/>
+<!--			<textarea rows="10" name="post_content" cols="20"></textarea>-->
 			<input type="checkbox" name="post_category_name[]" value="25.00">$25<br>
-			<input type="checkbox" name="post_category_name[]" value="50.00">$50<br>
-			<input type="checkbox" name="post_category_name[]" value="100.00">$100<br>
-			<input type="checkbox" name="post_category_name[]" value="500.00">$200<br>
+			<input type="checkbox" name="post_category_name[]" value="50.00">$50
+<!--			<input type="checkbox" name="post_category_name[]" value="100.00">$100<br>-->
+<!--			<input type="checkbox" name="post_category_name[]" value="500.00">$200<br>-->
 			<input type="submit" />
 		</form>
 	<?php
