@@ -164,7 +164,7 @@ class FormToPost_Plugin extends FormToPost_LifeCycle {
 
         $post = array(
             'post_status' => 'publish',
-            'post_type' => 'post',
+            'post_type' => 'pledges',
             'post_category' => array(0)
         );
 
