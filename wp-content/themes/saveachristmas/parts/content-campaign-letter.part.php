@@ -1,11 +1,12 @@
 <?php
-
+	
 	$myCampaigns = new WP_Query();
 	$myCampaigns->query('showposts=1&post_type=campaigns');
 
 	while ( $myCampaigns->have_posts() ) :
 		$myCampaigns->the_post();
 ?>
+
 		<h3 class="campaign-widget-title"><?php the_title(); ?></h3>
 		<h3> Start Date:
 			<?php
