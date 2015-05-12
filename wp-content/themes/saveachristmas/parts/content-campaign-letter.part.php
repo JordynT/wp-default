@@ -6,8 +6,13 @@
 	);
 
 	$myCampaigns = new WP_Query( $args );
-	$campaign = $myCampaigns->posts[0];
-	setup_postdata($GLOBALS['post'] =& $campaign);
+	if( !$myCampaigns->have_posts() ) { 
+		echo '<h2>There Are No Active Campaigns</h2>';
+		return;
+	} else {
+		$campaign = $myCampaigns->posts[0];
+		setup_postdata($GLOBALS['post'] =& $campaign);
+	}
 
 	// while ( $myCampaigns->have_posts() ) :
 	// 		$myCampaigns->the_post();
