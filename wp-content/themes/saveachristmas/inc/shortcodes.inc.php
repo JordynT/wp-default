@@ -36,9 +36,11 @@ static function donation_form(){
 <!--		</form>-->
 
 		<form action="" method="post">
+			<input type="hidden" name="post_content" value="heloo"/>
+			<input type="hidden" name="meta_annual-donation-campaign-id" value="12"/>
+			<input type="hidden" name="annual-donation-pledge-option-id" value="24"/>
 			First Name: <input type="text" name="post_title" required/><br/>
 			Donation:
-			<input type="text" name="post_content"/>
 <!--			<textarea rows="10" name="post_content" cols="20"></textarea>-->
 			<input type="checkbox" name="post_category_name[]" value="25.00">$25<br>
 			<input type="checkbox" name="post_category_name[]" value="50.00">$50
