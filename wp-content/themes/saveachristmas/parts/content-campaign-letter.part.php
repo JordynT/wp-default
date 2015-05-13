@@ -29,7 +29,6 @@
 			}
 			?>
 		</h3>
-=======
 <!--		<h3> Start Date:-->
 <!--			--><?php
 //			if ( get_post_meta( get_the_ID(), 'campaign_options', true ) ) {
