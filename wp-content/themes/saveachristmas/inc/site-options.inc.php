@@ -4,7 +4,6 @@ define( 'SITEOPTION_PREFIX', 'jt_option_' );
 get_template_part('/lib/site-options-builder.class');
 
 function site_options(){
-//	die(__FILE__);
 	// create network-wide settings page
 	$network_options_page = new sm_options_page( array (
 //		'parent_id'    => 'settings.php',

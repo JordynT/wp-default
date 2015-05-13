@@ -27,8 +27,6 @@
 			<!-- #content -->
 		</div>
 		<!-- #primary -->
-
-
 	</div><!-- #main -->
 
 <?php get_footer(); ?>
