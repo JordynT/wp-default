@@ -19,25 +19,17 @@
 ?>
 
 		<h3 class="campaign-widget-title"><?php the_title(); ?></h3>
-<<<<<<< HEAD
-		<h3> Start Date:
-			<?php
-
-			if ( get_post_meta( get_the_ID(), 'campaign_options', true ) ) {
-				$values = maybe_unserialize(get_post_meta(get_the_ID(), 'campaign_options', true));
-				echo $values['start-date'];
-			}
-			?>
-		</h3>
 <!--		<h3> Start Date:-->
 <!--			--><?php
+//
 //			if ( get_post_meta( get_the_ID(), 'campaign_options', true ) ) {
 //				$values = maybe_unserialize(get_post_meta(get_the_ID(), 'campaign_options', true));
 //				echo $values['start-date'];
 //			}
 //			?>
+<!---->
 <!--		</h3>-->
->>>>>>> pledges
+
 		<?php the_content();?>
 <?php 
 // endwhile;

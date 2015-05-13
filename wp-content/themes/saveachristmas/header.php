@@ -190,22 +190,7 @@
 
 					<?php wp_nav_menu($args); ?>
 					</div>
-<!--					<div class="menu-navigation-menu-container">-->
-<!--						<ul id="menu-navigation-menu" class="nav-menu-primary">-->
-<!--							<li id="menu-item-442"-->
-<!--								class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-442">-->
-<!--								<a href="/#widget_campaignify_hero_contribute-2">Get Started</a></li>-->
-<!--							<li id="menu-item-441"-->
-<!--								class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-441">-->
-<!--								<a href="/#widget_campaignify_campaign_pledge_levels-2">Choose a Pledge</a></li>-->
-<!--							<li id="menu-item-443"-->
-<!--								class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-443">-->
-<!--								<a href="/#text-7">Event Details</a></li>-->
-<!--							<li id="menu-item-421"-->
-<!--								class="menu-item menu-item-type-post_type menu-item-object-page menu-item-421"><a-->
-<!--									href="http://saveachristmas.com/contact/">Contact Us</a></li>-->
-<!--						</ul>-->
-<!--					</div>-->
+
 				</nav>
 
 				<a href="#" class="primary-menu-toggle"><i class="icon-menu"></i></a>
