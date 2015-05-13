@@ -36,16 +36,36 @@ static function donation_form(){
 <!--		</form>-->
 
 		<form action="" method="post">
-			<input type="hidden" name="post_content" value="heloo"/>
-			<input type="hidden" name="meta_annual-donation-campaign-id" value="12"/>
+			<?php
+			$args = array(
+				'post_type' => 'campaigns',
+				'meta_key' => 'is_active',
+				'meta_value' => "1",
+			);
+
+			$myCampaigns = new WP_Query( $args );
+			if( !$myCampaigns->have_posts() ) {
+				$campaign_id =  'There Are No Active Campaigns';
+				$campaign_title = 'no active campaigns';
+				return;
+			} else {
+				$campaign = $myCampaigns->posts[0];
+				setup_postdata($GLOBALS['post'] =& $campaign);
+				$campaign_id = get_the_ID();
+				$campaign_title = get_the_title();
+			}
+			?>
+			<input type="hidden" name="post_content" value="Donation for <?php echo $campaign_title; ?>"/>
+			<input type="hidden" name="meta_annual-donation-campaign-id" value="<?php echo $campaign_id; ?>"/>
 			<input type="hidden" name="annual-donation-pledge-option-id" value="24"/>
-			First Name: <input type="text" name="post_title" required/><br/>
-			Donation:
-<!--			<textarea rows="10" name="post_content" cols="20"></textarea>-->
-			<input type="checkbox" name="post_category_name[]" value="25.00">$25<br>
-			<input type="checkbox" name="post_category_name[]" value="50.00">$50
+			<h4>First Name:</h4>**
+			<p><input type="text" name="post_title" required></p>
+			<h4>Donation:</h4>**
+			<p><input type="checkbox" name="meta_annual_donation_pledge_amount" value="25.00">$25
+			<input type="checkbox" name="meta_annual_donation_pledge_amount" value="50.00">$50</p>
 <!--			<input type="checkbox" name="post_category_name[]" value="100.00">$100<br>-->
 <!--			<input type="checkbox" name="post_category_name[]" value="500.00">$200<br>-->
+			**required fields
 			<input type="submit" />
 		</form>
 	<?php
