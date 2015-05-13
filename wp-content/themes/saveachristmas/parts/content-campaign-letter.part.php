@@ -28,7 +28,7 @@
 			}
 			?>
 		</h3> pledges </h3>
-		<?php the_content();?>
+		<?php the_content();?>	
 <?php 
 // endwhile;
 wp_reset_postdata(); //re-sets everything back to normal
