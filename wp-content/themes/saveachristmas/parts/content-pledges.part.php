@@ -1,4 +1,4 @@
-	<div class="container">
+ev	<div class="container">
 		<h3 class="campaign-widget-title"><?php echo get_custom_option('pledge_options_title');?></h3>
 
 		<div class="campaignify-pledge-boxes campaignify-pledge-boxes-4 expired">
@@ -9,6 +9,10 @@
 			$the_query = query_posts('post_type=pledge-options&orderby=date&order=ASC');
 			$sold = 3;
 			if (have_posts()) : while (have_posts()) : the_post();
+
+//				$pledge_donation = query_posts('post_type=pledges');
+//				if (have_posts()) : while (have_posts()) : the_post();
+//						if($pledge_donation->)
 
 				global $post;
 				$meta = get_post_meta($post->ID,'pledge_options', true);

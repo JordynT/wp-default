@@ -58,15 +58,23 @@ static function donation_form(){
 			<input type="hidden" name="post_content" value="Donation for <?php echo $campaign_title; ?>"/>
 			<input type="hidden" name="meta_annual-donation-campaign-id" value="<?php echo $campaign_id; ?>"/>
 			<input type="hidden" name="annual-donation-pledge-option-id" value="24"/>
-			<h4>First Name:</h4>**
+			<h4>First Name:**</h4>
 			<p><input type="text" name="post_title" required></p>
-			<h4>Donation:</h4>**
-			<p><input type="checkbox" name="meta_annual_donation_pledge_amount" value="25.00">$25
+			<h4>Donation:**</h4>
+
+			<p>
+<!--                <select name="meta_annual_donation_pledge_amount" id="">-->
+<!--                    <option value="25">$25.00</option>-->
+<!--                    <option value="50">$50.00</option>-->
+<!--                    <option value="100">$100.00</option>-->
+<!--                </select>-->
+            </p>
+                <p><input type="checkbox" name="meta_annual_donation_pledge_amount" value="25.00">$25
 			<input type="checkbox" name="meta_annual_donation_pledge_amount" value="50.00">$50</p>
 <!--			<input type="checkbox" name="post_category_name[]" value="100.00">$100<br>-->
 <!--			<input type="checkbox" name="post_category_name[]" value="500.00">$200<br>-->
 			**required fields
-			<input type="submit" />
+			<p><input type="submit" /></p>
 		</form>
 	<?php
 	}
