@@ -47,6 +47,7 @@ function sc_pledge_options_callback($post){
 
 	wp_nonce_field( 'sc_metabox_nonce', 'sc_nonce_field');
 	$value = get_post_meta($post->ID, 'pledge_options', true);
+    
 	$html = '<label for="pledge-options-amount">';
 		$html .= 'Pledge Amount: ';
 	$html .= '</label>';
