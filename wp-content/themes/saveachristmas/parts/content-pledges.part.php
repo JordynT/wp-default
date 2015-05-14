@@ -1,4 +1,8 @@
-ev	<div class="container">
+<?php 
+	
+?>
+
+<div class="container">
 		<h3 class="campaign-widget-title"><?php echo get_custom_option('pledge_options_title');?></h3>
 
 		<div class="campaignify-pledge-boxes campaignify-pledge-boxes-4 expired">
@@ -20,7 +24,12 @@ ev	<div class="container">
 				$limit = $meta['limit'];
 				$remaining = $limit - $sold;
 				$percent = ($sold/$limit) * 100;
+				$fully_booked = 0;
+
+				// $campaign_options = get_post_meta(get_the_ID(), 'campaign_options', true);
+				// $fully_booked = $campaign_options['is_fully_booked'];
 				?>
+					<!-- <div class="campaignify-pledge-box <?php ($fully_booked == 1 ? ' get_custom_option("site_fully_booked_modal_css_class") ' : get_custom_option('site_featured_modal_css_class')) ?>" data-price="<?php echo $data_price; ?>-0"> -->
 					<div class="campaignify-pledge-box <?php echo get_custom_option('site_featured_modal_css_class'); ?>" data-price="<?php echo $data_price; ?>-0">
 						<h3><?php the_title(); ?></h3>
 
