@@ -1,34 +1,86 @@
-<?php $myCampaigns = new WP_Query();
-$myCampaigns->query('showposts=1&post_type=campaigns');
+<?php
+//$myCampaigns = new WP_Query();
+//$myCampaigns->query('showposts=1&post_type=campaigns');
+//
+//while ( $myCampaigns->have_posts() ) :
+//$myCampaigns->the_post();
 
-while ( $myCampaigns->have_posts() ) :
-$myCampaigns->the_post();
+	$args = array(
+		'post_type' => 'campaigns',
+		'meta_key' => 'is_active',
+		'meta_value' => "1",
+	);
 
-$campaign_options = maybe_unserialize(get_post_meta($post->ID, 'campaign_options', true));
-$goal = $campaign_options['goal'];
-//echo $goal;
-$total_pledged = 100; //sum(); //the total sum of the donations so far
-$total_perc_funded = 25; // floor(($total_pledged / $goal) * 100) //the percentage of funding of the goal
+	$myCampaigns = new WP_Query( $args );
+	if( !$myCampaigns->have_posts() ) {
+		echo '<h2>There Are No Active Campaigns</h2>';
+		return;
+	} else {
+		$campaign = $myCampaigns->posts[0];
+		setup_postdata($GLOBALS['post'] =& $campaign);
+		$campaign_id = get_the_ID();
+		$campaign_options = maybe_unserialize(get_post_meta($campaign_id, 'campaign_options', true));
+		$goal = $campaign_options['goal'];
+		$end_date = $campaign_options['end-date'];
+		echo $goal;?><br>
+<?php		echo $end_date;
+	}
+
+//$campaign_options = maybe_unserialize(get_post_meta($post->ID, 'campaign_options', true));
 
 $date = 12312313; //strtotime($campaign_options['end_date']);
+$total = 0;
+$total_perc_funded = 0;
+$days_remaining = 0;
+//echo $goal;
 
-$remaining = $date - time();
-$days_remaining = floor($remaining / 86400);
+//
+
+
+$arguments = array(
+	'numberposts' => -1,  // all the posts
+	'post_type'   => 'pledges',
+    'meta_key' => 'annual-donation-campaign-id',
+    'meta_value' => $campaign_id,
+);
+$pledges = get_posts( $arguments );
+$total = 0;
+foreach( $pledges as $donation ) {
+    //var_export($donation);
+    $post_meta = get_post_meta($donation->ID,'annual-donation-campaign-id', true );
+    $total += $post_meta;
+echo '<h2>' . $total . '</h2>';
+
+
+//    $meta_data = get_post_meta($donation->ID, 'annual_donation_pledge_amount', true);
+//    $meta_data .= doubleval($meta_data);
+//    echo '<li>' . $meta_data . '</li>';
+}
+
+echo '<b>' . $total . '</b>';
+
+////$total_pledged = 100; //sum(); //the total sum of the donations so far
+//$total_perc_funded = floor(($total / $goal) * 100); //the percentage of funding of the goal
+//
+//
+//
+//$remaining = $date - time();
+//$days_remaining = floor($remaining / 86400);
 ?>
 <div class="campaign-hero loading has-slideshow">
 	<div class="campaign-hero-donate-options animated fadeInDown">
 		<div class="donation-progress-bar">
 			<span class="donation-progress-percent"><?php echo $total_perc_funded; ?> %</span>
-			<span class="donation-progress-funded"><?php echo $total_pledged; ?> <em> Pledges Raised</em></span>
+			<span class="donation-progress-funded"><?php echo $total; ?> <em> Pledges Raised</em></span>
 
 			<span class="donation-progress-togo"><?php echo $days_remaining; ?> Days left</span>
 
 			<div class="donation-progress" style="width: 23%"></div>
 		</div>
-	<?php  endwhile; ?>
+<!--	--><?php // endwhile; ?>
 
 		<div class="donation-donate">
-			<a href="#" class="button button-primary contribute eModal-1"><?php echo get_custom_option('site_featured_hero_button'); ?></a>
+			<a href="#" class="button button-primary contribute <?php echo get_custom_option('site_featured_modal_css_class'); ?>"><?php echo get_custom_option('site_featured_hero_button'); ?></a>
 		</div>
 
 		<div class="donation-share">
