@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Our custom post type function
+ */
 function create_custom_pledgeoptions_posttype()
 {
 $labels = array(
@@ -36,9 +39,7 @@ add_action('init', 'create_custom_pledgeoptions_posttype');
 //Registers Meta Boxes for pledge options
 function sc_add_pledge_options_metaboxes (){
 	add_meta_box('pledge_options_metabox', 'Pledge Options', 'sc_pledge_options_callback', 'pledge-options', 'normal', 'high');
-//	add_meta_box('sc_campaign_pledges', 'Pledges', 'sc_campaign_pledges', 'campaigns', 'normal', 'high');
 }
-
 add_action('add_meta_boxes', 'sc_add_pledge_options_metaboxes');
 
 
@@ -71,13 +72,9 @@ function sc_save_pledge_options_metabox_data($post_id){
 				'backers' => sanitize_text_field($_POST['pledge-options-backers']),
 				'limit' => sanitize_text_field($_POST['pledge-options-limit'])
 			];
-//			if(isset( $_POST['pledge-options-amount']) && 0 < count(strlen( trim($_POST['pledge-options-amount'])))) {
-//				$pledge_options_amount = stripslashes( strip_tags($_POST['pledge-options-amount']));
 				update_post_meta($post_id, 'pledge_options', $my_pledge_options);
 			}
 		}
-
-
 add_action('save_post', 'sc_save_pledge_options_metabox_data');
 
 function sc_user_can_save($post_id, $nonce){
@@ -86,8 +83,8 @@ function sc_user_can_save($post_id, $nonce){
 	//is revision?
 	$is_revision = wp_is_post_revision($post_id);
 	//is nonce valid?
-//	$is_not_valid_nonce = if( !isset( $_POST['sc_nonse_field'] ) || !wp_verify_nonce( $_POST['meta_box_nonce'], 'my_meta_box_nonce' ) ) return;
 	$is_valid_nonce = (isset($_POST[$nonce]) && wp_verify_nonce($_POST[ $nonce ], 'sc_metabox_nonce'));
+    //return info
 	return ! ($is_autosave || $is_revision) && $is_valid_nonce;
 
 
