@@ -1,29 +1,37 @@
 <?php
+
 /**
  * grab all campaigns that are active and most current
  */
-	$args = array(
-		'post_type' => 'campaigns',
-		'meta_key' => 'is_active',
-		'meta_value' => "1",
-	);
+$args = array(
+	'post_type' => 'campaigns',
+	'meta_key' => 'is_active',
+	'meta_value' => "1",
+);
 
-	$myCampaigns = new WP_Query( $args );
-	if( !$myCampaigns->have_posts() ) {
-		echo '<h2>There Are No Active Campaigns</h2>';
-        $goal = 0;
-        $campaign_id = '';
-        $end_date = 0;
-		return;
+$myCampaigns = new WP_Query( $args );
+if( !$myCampaigns->have_posts() ) {
+	echo '<h2>There Are No Active Campaigns</h2>';
+    $goal = 0;
+    $campaign_id = '';
+    $end_date = 0;
+	return;
 
-	} else {
-		$campaign = $myCampaigns->posts[0];
-		setup_postdata($GLOBALS['post'] =& $campaign);
-		$campaign_id = get_the_ID();
-		$campaign_options = maybe_unserialize(get_post_meta($campaign_id, 'campaign_options', true));
-		$goal = $campaign_options['goal'];
-		$end_date = $campaign_options['end-date'];
-	}
+} else {
+	$campaign = $myCampaigns->posts[0];
+	setup_postdata($GLOBALS['post'] =& $campaign);
+	$campaign_id = get_the_ID();
+	$campaign_options = maybe_unserialize(get_post_meta($campaign_id, 'campaign_options', true));
+	$goal = $campaign_options['goal'];
+	$end_date = $campaign_options['end-date'];
+    $fully_booked = $campaign_options['is_fully_booked'];
+}
+
+if( $fully_booked == 1) {
+    $modal_css_class = get_custom_option('site_fully_booked_modal_css_class');
+} else {
+    $modal_css_class = get_custom_option("site_featured_modal_css_class");
+}
 
 
 /**
@@ -74,7 +82,7 @@ $days_remaining = floor($remaining / 86400);
                 <div class="donation-progress" style="width: 23%"></div>
             </div>
             <div class="donation-donate">
-                <a href="#" class="button button-primary contribute <?php echo get_custom_option('site_featured_modal_css_class'); ?>"><?php echo get_custom_option('site_featured_hero_button'); ?></a>
+                <a href="#" class="button button-primary contribute <?php echo $modal_css_class; ?>"><?php echo get_custom_option('site_featured_hero_button'); ?></a>
             </div>
 
             <div class="donation-share">
