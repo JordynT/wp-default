@@ -26,7 +26,7 @@ $args = array(
 'public'        => true,
 'menu_position' => 5,
 'register_meta_box_cb' => 'sc_add_pledge_options_metaboxes',
-'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt', 'comments', 'custom-fields' ),
+'supports'      => array( 'title', 'editor', 'excerpt', 'custom-fields' ),
 'has_archive'   => true
 );
 register_post_type('pledge-options', $args);
@@ -38,7 +38,7 @@ add_action('init', 'create_custom_pledgeoptions_posttype');
 
 //Registers Meta Boxes for pledge options
 function sc_add_pledge_options_metaboxes (){
-	add_meta_box('pledge_options_metabox', 'Pledge Options', 'sc_pledge_options_callback', 'pledge-options', 'normal', 'high');
+	add_meta_box('pledge_options_metabox', 'Pledge Options', 'sc_pledge_options_callback', 'pledge-options', 'side', 'core');
 }
 add_action('add_meta_boxes', 'sc_add_pledge_options_metaboxes');
 
@@ -47,7 +47,8 @@ function sc_pledge_options_callback($post){
 
 	wp_nonce_field( 'sc_metabox_nonce', 'sc_nonce_field');
 	$value = get_post_meta($post->ID, 'pledge_options', true);
-	$html = '<label for="pledge-options-amount">';
+    $html = '<label for="pledge_option_is_active">is this pledge value active?</label>';
+	$html .= '<label for="pledge-options-amount">';
 		$html .= 'Pledge Amount: ';
 	$html .= '</label>';
 	$html .= '<p><input type="text" class="pledge-options-title" name="pledge-options-amount" value="' . $value['amount'] . '" placeholder="ex: $25.00"></p>';
