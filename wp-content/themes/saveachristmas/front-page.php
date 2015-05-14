@@ -15,7 +15,7 @@
 
 							<?php get_template_part('parts/content', 'pledges.part');?>
 				</section>
-				<section class="campaign-widget widget_campaignify_campaign_content arrowed">
+				<section id="campaign_letter" class="campaign-widget widget_campaignify_campaign_content arrowed">
 					<div class="container">
 						<?php
 						get_template_part('parts/content', 'campaign-letter.part');
