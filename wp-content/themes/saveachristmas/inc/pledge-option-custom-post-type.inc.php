@@ -50,7 +50,7 @@ function sc_pledge_options_callback($post){
 	$html = '<label for="pledge-options-amount">';
 		$html .= 'Pledge Amount: ';
 	$html .= '</label>';
-	$html .= '<p><input type="text" class="pledge-options-title" name="pledge-options-amount" value="' . $value['amount'] . '" placeholder="ex: $25.00"></p>';
+	$html .= '<p>$<input type="number" class="pledge-options-title" name="pledge-options-amount" value="' . $value['amount'] . '" ></p>';
 	$html .= '<label for="pledge-options-backers">';
 		$html .= 'Number of Backers:';
 	$html .= '</label>';
