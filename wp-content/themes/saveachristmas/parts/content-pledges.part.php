@@ -46,15 +46,6 @@ $arguments = array(
     'meta_value' => $campaign_id,
 );
 $pledges = get_posts( $arguments );
-// $total_pledged = '';
-// foreach ($pledges as $pledge) {
-// 	$meta = get_post_meta($pledge->ID, 'annual_donation_pledge_amount', true);
-// 	$total_pledged += $meta;
-// }
-
-
-
-
 ?>
 
 <div class="container">
@@ -86,7 +77,7 @@ $pledges = get_posts( $arguments );
 				if (!$sold == '') {
 					$sold = $sold / $data_price; 
 				}
-				
+
 				$remaining = $limit - $sold;
 				$percent = ($sold/$limit) * 100;
 
