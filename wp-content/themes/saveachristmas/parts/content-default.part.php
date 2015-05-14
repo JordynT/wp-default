@@ -8,8 +8,8 @@ if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 			<?php the_content(); ?>
 		</div>
 	</article>
+    <!-- end of the loop -->
 	<?php endwhile; ?>
-	<!-- end of the loop -->
 	<!-- pagination here -->
 	<?php wp_reset_postdata(); ?>
 <?php else : ?>
