@@ -47,7 +47,7 @@ $date = strtotime($end_date);
  * grab all pledges that match the current campaign's ID
  */
 $arguments = array(
-	'numberposts' => -1,  // all the posts
+	'numberposts' => -1,  // a -1 gets all the posts
 	'post_type'   => 'pledges',
     'meta_key' => 'annual-donation-campaign-id',
     'meta_value' => $campaign_id,
@@ -74,7 +74,7 @@ $days_remaining = floor($remaining / 86400);
     <div class="campaign-hero loading has-slideshow">
         <div class="campaign-hero-donate-options animated fadeInDown">
             <div class="donation-progress-bar">
-                <span class="donation-progress-percent"><?php echo $total_perc_funded; ?> %</span>
+                <span class="donation-progress-percent"><?php echo $total_perc_funded; ?> % Funded</span>
                 <span class="donation-progress-funded">$<?php echo $total; ?> <em> Raised</em></span>
 
                 <span class="donation-progress-togo"><?php echo $days_remaining; ?> Days left</span>
