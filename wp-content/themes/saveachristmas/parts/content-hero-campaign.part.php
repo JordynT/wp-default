@@ -79,7 +79,7 @@ $days_remaining = floor($remaining / 86400);
 
                 <span class="donation-progress-togo"><?php echo $days_remaining; ?> Days left</span>
 
-                <div class="donation-progress" style="width: 23%"></div>
+                <div class="donation-progress" style="width: <?php echo $total_perc_funded; ?>%"></div>
             </div>
             <div class="donation-donate">
                 <a href="#" class="button button-primary contribute <?php echo $modal_css_class; ?>"><?php echo get_custom_option('site_featured_hero_button'); ?></a>
