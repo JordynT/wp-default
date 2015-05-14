@@ -49,8 +49,8 @@ static function donation_form(){
 				$campaign_title = get_the_title();
 			}
             ?>
-            <input type="hidden" name="post_content" value="Donation for <?php echo $campaign_title; ?>
-            <input type="hidden" name="meta_annual-donation-campaign-id" value="<?php echo $campaign_id; ?>
+            <input type="hidden" name="post_content" value="Donation for <?php echo $campaign_title; ?>" >
+            <input type="hidden" name="meta_annual-donation-campaign-id" value="<?php echo $campaign_id; ?>" >
             <input type="hidden" name="annual-donation-pledge-option-id" value="24"/>
             <h4>First Name:**</h4>
             <p><input type="text" name="post_title" required></p>
@@ -75,8 +75,6 @@ static function donation_form(){
                     $html = ' <input type="checkbox" name="meta_annual_donation_pledge_amount" value="' . $meta_data['amount'] . '"> $' . $meta_data['amount'] . '';
                     echo $html;
                 }
-
-
 			?>
             </p>
             **required fields
