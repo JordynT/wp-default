@@ -55,6 +55,7 @@ static function donation_form(){
             <h4>First Name:**</h4>
             <p><input type="text" name="post_title" required></p>
             <h4>Donation:**</h4>
+            <label><em>please only check one donation</em></label>
             <p>
 
             <?php
