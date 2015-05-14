@@ -47,7 +47,7 @@ $date = strtotime($end_date);
  * grab all pledges that match the current campaign's ID
  */
 $arguments = array(
-	'numberposts' => -1,  // all the posts
+	'numberposts' => -1,  // a -1 gets all the posts
 	'post_type'   => 'pledges',
     'meta_key' => 'annual-donation-campaign-id',
     'meta_value' => $campaign_id,
