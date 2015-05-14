@@ -74,7 +74,7 @@ $days_remaining = floor($remaining / 86400);
     <div class="campaign-hero loading has-slideshow">
         <div class="campaign-hero-donate-options animated fadeInDown">
             <div class="donation-progress-bar">
-                <span class="donation-progress-percent"><?php echo $total_perc_funded; ?> %</span>
+                <span class="donation-progress-percent"><?php echo $total_perc_funded; ?> % Funded</span>
                 <span class="donation-progress-funded">$<?php echo $total; ?> <em> Raised</em></span>
 
                 <span class="donation-progress-togo"><?php echo $days_remaining; ?> Days left</span>
