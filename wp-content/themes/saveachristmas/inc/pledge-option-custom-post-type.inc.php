@@ -47,6 +47,7 @@ function sc_pledge_options_callback($post){
 
 	wp_nonce_field( 'sc_metabox_nonce', 'sc_nonce_field');
 	$value = get_post_meta($post->ID, 'pledge_options', true);
+    $is_active = get_post_meta($post->ID, 'pledge_option_is_active', true);
 
     $html  = '<label for="pledge_option_is_active">';
         $html .= 'Is this Pledge active?';
@@ -75,6 +76,8 @@ function sc_save_pledge_options_metabox_data($post_id){
 				'limit' => sanitize_text_field($_POST['pledge-options-limit'])
 			];
 				update_post_meta($post_id, 'pledge_options', $my_pledge_options);
+
+                update_post_meta($post_id, 'pledge_option_is_active', esc_attr($_POST['pledge_option_is_active']));
 			}
 		}
 add_action('save_post', 'sc_save_pledge_options_metabox_data');

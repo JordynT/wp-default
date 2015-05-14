@@ -48,6 +48,8 @@ static function donation_form(){
 				$campaign_id = get_the_ID();
 				$campaign_title = get_the_title();
 			}
+
+
 			?>
 			<input type="hidden" name="post_content" value="Donation for <?php echo $campaign_title; ?>"/>
 			<input type="hidden" name="meta_annual-donation-campaign-id" value="<?php echo $campaign_id; ?>"/>
