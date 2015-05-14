@@ -10,6 +10,10 @@ ev	<div class="container">
 			$sold = 3;
 			if (have_posts()) : while (have_posts()) : the_post();
 
+//				$pledge_donation = query_posts('post_type=pledges');
+//				if (have_posts()) : while (have_posts()) : the_post();
+//						if($pledge_donation->)
+
 				global $post;
 				$meta = get_post_meta($post->ID,'pledge_options', true);
 				$data_price = $meta['amount'];
