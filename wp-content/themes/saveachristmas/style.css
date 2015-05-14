@@ -6,7 +6,6 @@ Description: non-Profit Project
 Version: 0.1
 
 */
-git 
 @media (max-width: 1180px) {
 	html,
 	body {
@@ -159,6 +158,41 @@ git
 		margin: 0 auto;
 		max-width: 90%;
 	}
+
+
+
+
+    /*#widget_campaignify_campaign_feature-2 {*/
+        /*background-color : #ffffff;*/
+        /*color: #818080;*/
+    /*}*/
+
+	/*#widget_campaignify_hero_contribute-2 {*/
+        /*background-color : #ffffff;*/
+        /*color: #818080;*/
+    /*}*/
+
+	/*#widget_campaignify_hero_contribute-2 .donation-share-buttons a {*/
+        /*color : #818080;*/
+    /*}*/
+	/*#widget_campaignify_campaign_pledge_levels-2 {*/
+        /*background-color: #ffffff;*/
+        /*color: #818080;*/
+    /*}*/
+    /*#widget_campaignify_campaign_content-2 {*/
+        /*background-color: #ffffff;*/
+        /*color: #818080;*/
+    /*}*/
+    /*.site-branding,.site-description {*/
+        /*color : #5d5d5d;*/
+    /*}*/
+
+
+
+
+
+
+
 }
 
 @media (max-width: 900px) {
