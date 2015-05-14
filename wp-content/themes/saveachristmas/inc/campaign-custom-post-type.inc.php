@@ -1,7 +1,8 @@
 <?php
 
-//get_template_part('campaign-meta-boxes.inc');
-// Our custom post type function
+/**
+ * Our custom post type function
+ */
 function create_custom_posttype()
 {
 	$labels = array(
@@ -52,8 +53,8 @@ function sc_campaign_callback($post){
 	wp_nonce_field( 'sc_metabox_nonce', 'sc_nonce_field');
 	$values = never_empty_values($post->ID,['end-date','start-date','goal', 'is_fully_booked']);
 	$is_active = get_post_meta($post->ID, 'is_active', true);
-	//build form
 
+	//build form
 	$html = '<div><input type="checkbox" name="is_active" value="1" '. (!empty($is_active) ? ' checked="checked" ' : null) .' /><label><strong> Is Active Campaign?</strong></label></div>';
 	$html .= '<div><input type="checkbox" name="is_fully_booked" value="1" '. (!empty($values['is_fully_booked']) ? ' checked="checked" ' : null) .' /><label><strong> Is Fully Booked?</strong></label></div>';
 	$html .= '<p><label for="annual-campaign-start-date">';
@@ -62,7 +63,6 @@ function sc_campaign_callback($post){
 	$html .= '<input type="date" class="annual-campaign-start-date" name="annual-campaign-start-date" value="' . $values['start-date'] . '"></p>';
 	$html .= '<label for="annual-campaign-end-date">';
 	$html .= '<strong>End Date: </strong>';
-// pledges
 	$html .= '</label>';
 	$html .= '<input type="date" name="annual-campaign-end-date" value="'. $values['end-date'] . '"></p>';
 	$html .= '<p><label for="annual-campaign-goal">';
@@ -74,7 +74,6 @@ function sc_campaign_callback($post){
 
 function never_empty_values($post_id,$fields){
 	$values = maybe_unserialize(get_post_meta($post_id, 'campaign_options', true));
-	//var_export($values);
 	if(!$values) {
 		$values = [];
 	}
@@ -108,9 +107,9 @@ function sc_user_can_save_campaign($post_id, $nonce){
 	$is_autosave = wp_is_post_autosave($post_id);
 	//is revision?
 	$is_revision = wp_is_post_revision($post_id);
-	//is nonce valid?
-//	$is_not_valid_nonce = if( !isset( $_POST['sc_nonse_field'] ) || !wp_verify_nonce( $_POST['meta_box_nonce'], 'my_meta_box_nonce' ) ) return;
+    //is valid nonce?
 	$is_valid_nonce = (isset($_POST[$nonce]) && wp_verify_nonce($_POST[ $nonce ], 'sc_metabox_nonce'));
+    //return info
 	return ! ($is_autosave || $is_revision) && $is_valid_nonce;
 }
 
