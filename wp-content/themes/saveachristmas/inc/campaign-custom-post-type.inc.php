@@ -60,12 +60,8 @@ function sc_campaign_callback($post){
 	$html .= '<strong>Start date: </strong>';
 	$html .= '</label>';
 	$html .= '<input type="date" class="annual-campaign-start-date" name="annual-campaign-start-date" value="' . $values['start-date'] . '"></p>';
-	$html .= '<p><label for="annual-campaign-end-date">';
-	$html .= '<strong>End Date: </strong>';
-
-	$html .= '<p><input type="date" class="annual-campaign-start-date" name="annual-campaign-start-date" value="' . $values['start-date'] . '"></p>';
 	$html .= '<label for="annual-campaign-end-date">';
-	$html .= 'End Date:';
+	$html .= '<strong>End Date: </strong>';
 // pledges
 	$html .= '</label>';
 	$html .= '<input type="date" name="annual-campaign-end-date" value="'. $values['end-date'] . '"></p>';
