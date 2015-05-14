@@ -1,22 +1,21 @@
 <?php
-	$args = array( 
-		'post_type' => 'campaigns',
-		'meta_key' => 'is_active',
-		'meta_value' => "1",
-	);
+$args = array(
+    'post_type' => 'campaigns',
+    'meta_key' => 'is_active',
+    'meta_value' => "1",
+);
 
-	$myCampaigns = new WP_Query( $args );
-	if( !$myCampaigns->have_posts() ) { 
-		echo '<h2>There Are No Active Campaigns</h2>';
-		return;
-		
-	} else {
-		$campaign = $myCampaigns->posts[0];
-		setup_postdata($GLOBALS['post'] =& $campaign);
-	}
+$myCampaigns = new WP_Query( $args );
+if( !$myCampaigns->have_posts() ) {
+    echo '<h2>There Are No Active Campaigns</h2>';
+    return;
 
-    // while ( $myCampaigns->have_posts() ) :
-    //         $myCampaigns->the_post();
+} else {
+    $campaign = $myCampaigns->posts[0];
+    setup_postdata($GLOBALS['post'] =& $campaign);
+}
+
+$myCampaigns->the_post();
 ?>
 	<?php 
 	$campaign_options = get_post_meta(get_the_ID(), 'campaign_options', true);
