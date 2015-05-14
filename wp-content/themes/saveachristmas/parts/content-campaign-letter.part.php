@@ -17,7 +17,14 @@
     // while ( $myCampaigns->have_posts() ) :
     //         $myCampaigns->the_post();
 ?>
+	<?php 
+	$campaign_options = get_post_meta(get_the_ID(), 'campaign_options', true);
+	$fully_booked = $campaign_options['is_fully_booked'];
+	if( $fully_booked == 1) {
+		echo '<h1 style="color:red;">The Campign Is Fully Booked This Year! No More Pledges Will Be Accepted, Sorry! Please Check Back Next Year!</h1>';
+	}
 
+	?>
         <h3 class="campaign-widget-title"><?php the_title(); ?></h3>
 <!--        <h3> Start Date:-->
 <!--            --><?php
@@ -34,4 +41,4 @@
 <?php 
 // endwhile;
 wp_reset_postdata(); //re-sets everything back to normal
-?>
+?>	

@@ -55,7 +55,7 @@ function sc_campaign_callback($post){
 	//build form
 
 	$html = '<div><input type="checkbox" name="is_active" value="1" '. (!empty($is_active) ? ' checked="checked" ' : null) .' /><label><strong> Is Active Campaign?</strong></label></div>';
-	$html .= '<div><input type="checkbox" name="is_fully_booked" value="'. $values['is_fully_booked'] .'" /><label><strong> Is Fully Booked?</strong></label></div>';
+	$html .= '<div><input type="checkbox" name="is_fully_booked" value="1" '. (!empty($values['is_fully_booked']) ? ' checked="checked" ' : null) .' /><label><strong> Is Fully Booked?</strong></label></div>';
 	$html .= '<p><label for="annual-campaign-start-date">';
 	$html .= '<strong>Start date: </strong>';
 	$html .= '</label>';
