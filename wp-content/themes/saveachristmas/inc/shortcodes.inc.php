@@ -48,21 +48,41 @@ static function donation_form(){
 				$campaign_id = get_the_ID();
 				$campaign_title = get_the_title();
 			}
+            ?>
+            <input type="hidden" name="post_content" value="Donation for <?php echo $campaign_title; ?>
+            <input type="hidden" name="meta_annual-donation-campaign-id" value="<?php echo $campaign_id; ?>
+            <input type="hidden" name="annual-donation-pledge-option-id" value="24"/>
+            <h4>First Name:**</h4>
+            <p><input type="text" name="post_title" required></p>
+            <h4>Donation:**</h4>
+            <p>
+
+            <?php
+
+
+            /**
+             * grab all pledges that match the current campaign's ID
+             */
+            $arguments = array(
+                'numberposts' => -1,  // all the posts
+                'post_type'   => 'pledge-options',
+                'meta_key' => 'pledge_option_is_active',
+                'meta_value' => '1',
+            );
+            $pledges = get_posts( $arguments );
+                foreach ($pledges as $option) {
+                    $meta_data = get_post_meta($option->ID, 'pledge_options', true);
+                    $html = ' <input type="checkbox" name="meta_annual_donation_pledge_amount" value="' . $meta_data['amount'] . '"> $' . $meta_data['amount'] . '';
+                    echo $html;
+                }
 
 
 			?>
-			<input type="hidden" name="post_content" value="Donation for <?php echo $campaign_title; ?>"/>
-			<input type="hidden" name="meta_annual-donation-campaign-id" value="<?php echo $campaign_id; ?>"/>
-			<input type="hidden" name="annual-donation-pledge-option-id" value="24"/>
-			<h4>First Name:**</h4>
-			<p><input type="text" name="post_title" required></p>
-			<h4>Donation:**</h4>
-            <p>
-                <input type="checkbox" name="meta_annual_donation_pledge_amount" value="25.00">$25
-			    <input type="checkbox" name="meta_annual_donation_pledge_amount" value="50.00">$50
             </p>
-			**required fields
-			<p><input type="submit" /></p>
+            **required fields
+            <p>
+                <input type="submit" />
+            </p>
 		</form>
 	<?php
 	}
