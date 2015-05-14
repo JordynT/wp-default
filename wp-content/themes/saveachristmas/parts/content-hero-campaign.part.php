@@ -22,8 +22,8 @@
 		$campaign_options = maybe_unserialize(get_post_meta($campaign_id, 'campaign_options', true));
 		$goal = $campaign_options['goal'];
 		$end_date = $campaign_options['end-date'];
-		echo $goal;?><br>
-<?php		echo $end_date;
+//		echo $goal;?><!--<br>-->
+<?php	//	echo $end_date;
 	}
 
 //$campaign_options = maybe_unserialize(get_post_meta($post->ID, 'campaign_options', true));
@@ -47,8 +47,10 @@ $pledges = get_posts( $arguments );
 $total = 0;
 foreach( $pledges as $donation ) {
     //var_export($donation);
-    $post_meta = get_post_meta($donation->ID,'annual-donation-campaign-id', true );
-    $total += $post_meta;
+    $post_meta = get_post_meta($donation->ID,'annual_donation_pledge_amount', true );
+//    echo $post_meta;
+
+    $total = $total + $post_meta;
 echo '<h2>' . $total . '</h2>';
 
 
@@ -56,6 +58,8 @@ echo '<h2>' . $total . '</h2>';
 //    $meta_data .= doubleval($meta_data);
 //    echo '<li>' . $meta_data . '</li>';
 }
+//print_r($pledges);
+//exit;
 
 echo '<b>' . $total . '</b>';
 

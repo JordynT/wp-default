@@ -61,7 +61,15 @@ static function donation_form(){
 			<h4>First Name:**</h4>
 			<p><input type="text" name="post_title" required></p>
 			<h4>Donation:**</h4>
-			<p><input type="checkbox" name="meta_annual_donation_pledge_amount" value="25.00">$25
+
+			<p>
+<!--                <select name="meta_annual_donation_pledge_amount" id="">-->
+<!--                    <option value="25">$25.00</option>-->
+<!--                    <option value="50">$50.00</option>-->
+<!--                    <option value="100">$100.00</option>-->
+<!--                </select>-->
+            </p>
+                <p><input type="checkbox" name="meta_annual_donation_pledge_amount" value="25.00">$25
 			<input type="checkbox" name="meta_annual_donation_pledge_amount" value="50.00">$50</p>
 <!--			<input type="checkbox" name="post_category_name[]" value="100.00">$100<br>-->
 <!--			<input type="checkbox" name="post_category_name[]" value="500.00">$200<br>-->
