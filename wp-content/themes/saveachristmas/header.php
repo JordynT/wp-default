@@ -12,7 +12,7 @@
 	<meta charset="UTF-8"/>
 	<meta name="viewport" content="width=device-width"/>
 
-	<title>Home Page - Save A Christmas</title>
+	<title>Home Page - <?php bloginfo('name'); ?></title>
 
 
 	<link rel="profile" href="http://gmpg.org/xfn/11"/>
@@ -40,34 +40,13 @@
 	</script>
 	<!-- / Yoast WordPress SEO plugin. -->
 
-	<!--	<link rel="alternate" type="application/rss+xml" title="Save A Christmas &raquo; Feed" href="http://saveachristmas.com/feed/" />-->
-	<!--	<link rel="alternate" type="application/rss+xml" title="Save A Christmas &raquo; Comments Feed" href="http://saveachristmas.com/comments/feed/" />-->
-	<!--	<link rel='stylesheet' id='edd-styles-css'  href='http://saveachristmas.com/wp-content/plugins/easy-digital-downloads/templates/edd.min.css?ver=2.2.1' type='text/css' media='all' />-->
 	<link rel='stylesheet' id='entypo-css'
 		  href='http://saveachristmas.com/wp-content/themes/campaignify/css/entypo.css?ver=4.1.1' type='text/css'
 		  media='all'/>
 	<link rel='stylesheet' id='campaignify-style-css'
 		  href='http://saveachristmas.com/wp-content/themes/saveachristmas/style.css?ver=20130505' type='text/css'
 		  media='all'/>
-	<!-- This site uses the Google Analytics by Yoast plugin v5.4 - Universal disabled - https://yoast.com/wordpress/plugins/google-analytics/ -->
-	<!--	<script type="text/javascript">-->
-	<!---->
-	<!--		var _gaq = _gaq || [];-->
-	<!--		_gaq.push(['_setAccount', 'UA-1670667-8']);-->
-	<!--		_gaq.push(['_gat._forceSSL']);-->
-	<!--		_gaq.push(['_trackPageview']);-->
-	<!---->
-	<!--		(function () {-->
-	<!--			var ga = document.createElement('script');-->
-	<!--			ga.type = 'text/javascript';-->
-	<!--			ga.async = true;-->
-	<!--			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';-->
-	<!--			var s = document.getElementsByTagName('script')[0];-->
-	<!--			s.parentNode.insertBefore(ga, s);-->
-	<!--		})();-->
-	<!---->
-	<!--	</script>-->
-	<!-- / Google Analytics by Yoast -->
+
 	<script type='text/javascript'>
 		/* <![CDATA[ */
 		var edd_scripts = {
@@ -99,9 +78,7 @@
 		};
 		/* ]]> */
 	</script>
-	<!--	<script type='text/javascript' src='http://saveachristmas.com/wp-content/plugins/appthemer-crowdfunding/assets/js/crowdfunding.js?ver=4.1.1'></script>-->
 	<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://saveachristmas.com/xmlrpc.php?rsd"/>
-	<!--	<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://saveachristmas.com/wp-includes/wlwmanifest.xml" />-->
 	<link rel='shortlink' href='http://saveachristmas.com/'/>
 	<meta name="generator" content="Easy Digital Downloads v2.2.1"/>
 	<meta name="viewport" content="initial-scale=1">
@@ -169,7 +146,7 @@
 	<header id="masthead" class="site-header" role="banner">
 		<div class="container">
 			<div class="site-header-main">
-				<a href="/" title="Save A Christmas" rel="home" class="site-branding">
+				<a href="/" title="<?php bloginfo('name'); ?>" rel="home" class="site-branding">
 					<hgroup>
 						<h1 class="site-title">
 
