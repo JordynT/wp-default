@@ -20,6 +20,9 @@ if( !$myCampaigns->have_posts() ) {
     $fully_booked = $campaign_options['is_fully_booked'];
 }
 
+/**
+ * checks if the campaign is fully booked or not, and assigns it the proper modal css class
+ */
 if( $fully_booked == 1) {
     $modal_css_class = get_custom_option('site_fully_booked_modal_css_class');
 } else {
@@ -48,15 +51,15 @@ $arguments = array(
 $pledges = get_posts( $arguments );
 ?>
 
-<div class="container">
+    <div class="container">
 		<h3 class="campaign-widget-title"><?php echo get_custom_option('pledge_options_title');?></h3>
 
 		<div class="campaignify-pledge-boxes campaignify-pledge-boxes-4 expired">
 
 			<?php
-			//$the_query = new WP_Query('pledge-options_id=' . get_custom_option('pledge_option_one'));
-			//$the_query = query_posts('post_type=pledge-options&p='. get_custom_option('pledge-option-one'));
-
+            /**
+             * grab all pledge-options that are chosen to be displayed
+             */
             $arguments = array(
                 'post_type' => 'pledge-options',
                 'order' => 'asc',
@@ -64,14 +67,9 @@ $pledges = get_posts( $arguments );
                 'meta_value' => '1',
 
             );
-//			$the_query = query_posts('post_type=pledge-options&orderby=date&order=ASC');
             $the_query = query_posts($arguments);
+
 			if (have_posts()) : while (have_posts()) : the_post();
-
-//				$pledge_donation = query_posts('post_type=pledges');
-//				if (have_posts()) : while (have_posts()) : the_post();
-//						if($pledge_donation->)
-
 				global $post;
 				$meta = get_post_meta($post->ID,'pledge_options', true);
 				$data_price = $meta['amount'];
@@ -89,6 +87,10 @@ $pledges = get_posts( $arguments );
 
 				$remaining = $limit - $sold;
 				$percent = ($sold/$limit) * 100;
+
+                /**
+                 * if these values have hit their greatest amounts, they will be set to them.
+                 */
                 if($percent > 100) {
                     $percent = 100;
                 }
@@ -126,7 +128,11 @@ $pledges = get_posts( $arguments );
 					</div>
 				<?php endwhile; ?>
 				<?php wp_reset_postdata(); ?>
-			<?php else : echo 'there are no pledges at this time'; ?>
+			<?php
+            /**
+             * if there are not pledge-options, this is the message that will appear
+             */
+                else : echo 'there are no pledges at this time'; ?>
 			<?php endif; ?>
 		</div>
 		<!--end .edd_price_options-->
