@@ -89,9 +89,12 @@ $pledges = get_posts( $arguments );
 
 				$remaining = $limit - $sold;
 				$percent = ($sold/$limit) * 100;
-
-				// $campaign_options = get_post_meta(get_the_ID(), 'campaign_options', true);
-				// $fully_booked = $campaign_options['is_fully_booked'];
+                if($percent > 100) {
+                    $percent = 100;
+                }
+                if($remaining < 0) {
+                    $remaining = 0;
+                }
 				?>
 					<div class="campaignify-pledge-box <?php echo $modal_css_class; ?>" data-price="<?php echo $data_price; ?>-0">
 						<h3><?php the_title(); ?></h3>
