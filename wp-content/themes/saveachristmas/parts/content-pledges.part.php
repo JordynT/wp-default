@@ -56,7 +56,16 @@ $pledges = get_posts( $arguments );
 			<?php
 			//$the_query = new WP_Query('pledge-options_id=' . get_custom_option('pledge_option_one'));
 			//$the_query = query_posts('post_type=pledge-options&p='. get_custom_option('pledge-option-one'));
-			$the_query = query_posts('post_type=pledge-options&orderby=date&order=ASC');
+
+            $arguments = array(
+                'post_type' => 'pledge-options',
+                'order' => 'asc',
+                'meta_key' => 'pledge_option_is_active',
+                'meta_value' => '1',
+
+            );
+//			$the_query = query_posts('post_type=pledge-options&orderby=date&order=ASC');
+            $the_query = query_posts($arguments);
 			if (have_posts()) : while (have_posts()) : the_post();
 
 //				$pledge_donation = query_posts('post_type=pledges');
@@ -114,7 +123,7 @@ $pledges = get_posts( $arguments );
 					</div>
 				<?php endwhile; ?>
 				<?php wp_reset_postdata(); ?>
-			<?php else : ?>
+			<?php else : echo 'there are no pledges at this time'; ?>
 			<?php endif; ?>
 		</div>
 		<!--end .edd_price_options-->
