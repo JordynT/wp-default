@@ -5,7 +5,9 @@
 class sc_shortcodes{
 	function __construct(){
 		add_shortcode('pledge-summary', array(__CLASS__,'pledge_summary'));
+        add_shortcode('share-widget', array(__CLASS__, 'share_frame'));
 		add_shortcode('donation-form', array(__CLASS__, 'donation_form'));
+
 	}
 
 	/**
@@ -24,10 +26,37 @@ class sc_shortcodes{
 	<?php
 	}
 
-/**
- * create donation form
- */
-static function donation_form(){
+
+
+    static function share_frame(){ ?>
+
+        <div id="share-widget" class="modal-share modal">
+            <h2 class="modal-title">Share this Campaign</h2>
+
+            <p>Help raise awareness for this campaign by sharing this widget. Simply paste the following HTML code most places on the web.</p>
+
+<!--            <div class="share-widget-preview">-->
+<!--                <div class="share-widget-preview-live">-->
+<!--                    <iframe src="http://saveachristmas.com/campaigns/christian-care-foster-shopping-trip-2014/?widget=1" width="260px" height="260px" frameborder="0" scrolling="no" /></iframe>-->
+<!--                </div>-->
+<!---->
+<!--                <div class="share-widget-preview-code">-->
+<!--                    <strong>Embed Code</strong>-->
+<!---->
+<!--                    <pre>&lt;iframe src="http://saveachristmas.com/campaigns/christian-care-foster-shopping-trip-2014/?widget=1" width="260px" height="260px" frameborder="0" scrolling="no" /&gt;&lt;/iframe&gt;</pre>-->
+<!--                </div>-->
+<!--            </div>-->
+        </div>
+
+
+
+    <?php
+    }
+
+    /**
+     * create donation form
+     */
+    static function donation_form(){
 	?>
 		<form action="" method="post">
 			<?php
@@ -85,4 +114,5 @@ static function donation_form(){
 		</form>
 	<?php
 	}
+
 }
