@@ -61,11 +61,6 @@ function site_options(){
 	$section_network_social->add_part( $network_hide_wp_updates = new sm_textfield( 'social_title', array (
 		'label'          => 'Social media Title'
 	) ) );
-//	$section_network_social->add_part( $network_hide_wp_updates = new sm_checkbox( 'social_facebook', array (
-//		'label'          => 'Would you like a Facebook icon?',
-//		'value'			 => 'checked'
-//
-//	) ) );
 	$section_network_social->add_part($network_hide_wp_updates = new sm_checkbox('social_facebook', array(
 		'label'=>'Check to include facebook icon',
 		'value'=>'true'

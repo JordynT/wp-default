@@ -29,27 +29,18 @@ class sc_shortcodes{
 
 
     static function share_frame(){ ?>
+        <div>
+            <div>
+                <div class="share-widget-preview-live">
+                    <iframe src="http://<?php echo get_custom_option('social_site'); ?>/campaigns/christian-care-foster-shopping-trip-2015" width="260px" height="260px" frameborder="0" scrolling="no" /></iframe>
+                </div>
+                <div class="share-widget-preview-code">
+                    <strong>Embed Code</strong>
 
-        <div id="share-widget" class="modal-share modal">
-            <h2 class="modal-title">Share this Campaign</h2>
-
-            <p>Help raise awareness for this campaign by sharing this widget. Simply paste the following HTML code most places on the web.</p>
-
-<!--            <div class="share-widget-preview">-->
-<!--                <div class="share-widget-preview-live">-->
-<!--                    <iframe src="http://saveachristmas.com/campaigns/christian-care-foster-shopping-trip-2014/?widget=1" width="260px" height="260px" frameborder="0" scrolling="no" /></iframe>-->
-<!--                </div>-->
-<!---->
-<!--                <div class="share-widget-preview-code">-->
-<!--                    <strong>Embed Code</strong>-->
-<!---->
-<!--                    <pre>&lt;iframe src="http://saveachristmas.com/campaigns/christian-care-foster-shopping-trip-2014/?widget=1" width="260px" height="260px" frameborder="0" scrolling="no" /&gt;&lt;/iframe&gt;</pre>-->
-<!--                </div>-->
-<!--            </div>-->
+                    <pre>&lt;iframe src="<?php echo get_custom_option('social_site'); ?>/campaigns/christian-care-foster-shopping-trip-2015" width="260px" height="260px" frameborder="0" scrolling="no" /&gt;&lt;/iframe&gt;</pre>
+                </div>
+            </div>
         </div>
-
-
-
     <?php
     }
 
