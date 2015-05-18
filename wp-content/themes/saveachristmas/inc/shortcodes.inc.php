@@ -5,7 +5,9 @@
 class sc_shortcodes{
 	function __construct(){
 		add_shortcode('pledge-summary', array(__CLASS__,'pledge_summary'));
+        add_shortcode('share-widget', array(__CLASS__, 'share_frame'));
 		add_shortcode('donation-form', array(__CLASS__, 'donation_form'));
+
 	}
 
 	/**
@@ -24,10 +26,28 @@ class sc_shortcodes{
 	<?php
 	}
 
-/**
- * create donation form
- */
-static function donation_form(){
+
+
+    static function share_frame(){ ?>
+        <div>
+            <div>
+                <div class="share-widget-preview-live">
+                    <iframe src="http://<?php echo get_custom_option('social_site'); ?>/campaigns/christian-care-foster-shopping-trip-2015" width="260px" height="260px" frameborder="0" scrolling="no" /></iframe>
+                </div>
+                <div class="share-widget-preview-code">
+                    <strong>Embed Code</strong>
+
+                    <pre>&lt;iframe src="<?php echo get_custom_option('social_site'); ?>/campaigns/christian-care-foster-shopping-trip-2015" width="260px" height="260px" frameborder="0" scrolling="no" /&gt;&lt;/iframe&gt;</pre>
+                </div>
+            </div>
+        </div>
+    <?php
+    }
+
+    /**
+     * create donation form
+     */
+    static function donation_form(){
 	?>
 		<form action="" method="post">
 		
@@ -85,4 +105,5 @@ static function donation_form(){
 		</form>
 	<?php
 	}
+
 }
