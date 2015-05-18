@@ -30,6 +30,7 @@ class sc_shortcodes{
 static function donation_form(){
 	?>
 		<form action="" method="post">
+		
 			<?php
 			$args = array(
 				'post_type' => 'campaigns',
@@ -49,6 +50,7 @@ static function donation_form(){
 				$campaign_title = get_the_title();
 			}
             ?>
+
             <input type="hidden" name="post_content" value="Donation for <?php echo $campaign_title; ?>" >
             <input type="hidden" name="meta_annual-donation-campaign-id" value="<?php echo $campaign_id; ?>" >
             <input type="hidden" name="annual-donation-pledge-option-id" value="24"/>
@@ -59,8 +61,6 @@ static function donation_form(){
             <p>
 
             <?php
-
-
             /**
              * grab all pledges that match the current campaign's ID
              */
