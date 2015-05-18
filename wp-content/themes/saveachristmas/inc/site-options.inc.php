@@ -6,7 +6,6 @@ get_template_part('/lib/site-options-builder.class');
 function site_options(){
 	// create network-wide settings page
 	$network_options_page = new sm_options_page( array (
-//		'parent_id'    => 'settings.php',
 		'id'           => 'network_settings',
 		'page_title'   => 'Save a Christmas Options',
 		'menu_title'   => 'sc Options'

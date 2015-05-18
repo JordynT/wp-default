@@ -91,6 +91,4 @@ function sc_user_can_save($post_id, $nonce){
 	$is_valid_nonce = (isset($_POST[$nonce]) && wp_verify_nonce($_POST[ $nonce ], 'sc_metabox_nonce'));
     //return info
 	return ! ($is_autosave || $is_revision) && $is_valid_nonce;
-
-
 }

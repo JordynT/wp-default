@@ -44,7 +44,6 @@ function sc_add_campaign_metaboxes () {
 		'side'
 	);
 }
-
 add_action('add_meta_boxes', 'sc_add_campaign_metaboxes');
 
 
