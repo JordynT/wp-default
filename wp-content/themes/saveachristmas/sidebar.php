@@ -3,7 +3,7 @@
 		<?php if ( ! dynamic_sidebar('primary') ) : ?>
 			<aside id="text-2" class="blog-widget widget_text widget_text">
 				<h2 class="widgettitle">Thank You!</h2>
-				<div class="textwidget">Thank you for your interest.</div>
+				<div class="textwidget">Thank you for your interest rawr.</div>
 			</aside>
 		<?php endif; ?>
 	</div>
