@@ -5,7 +5,9 @@ Author URI: http://wordpress.org/
 Description: non-Profit Project
 Version: 0.1
 
+This theme's primary stylesheet is located in /appearance/css
 */
+
 @media (max-width: 1180px) {
 	html,
 	body {
