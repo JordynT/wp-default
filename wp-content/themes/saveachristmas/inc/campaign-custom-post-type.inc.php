@@ -26,7 +26,7 @@ function create_custom_posttype()
 		'public'        => true,
 		'menu_position' => 5,
 		'register_meta_box_cb' => 'sc_add_campaign_metaboxes',
-		'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt', 'comments', 'custom-fields' ),
+		'supports'      => array( 'title', 'editor'),
 		'has_archive'   => true
 	);
 	register_post_type('campaigns', $args);
