@@ -95,7 +95,7 @@ function sc_save_campaign_metabox_data($post_id){
 		];
 		update_post_meta($post_id, 'campaign_options', $my_campaign_options);
 
-			
+		
 		update_post_meta($post_id, 'is_active', esc_attr($_POST['is_active']));
 	}
 }

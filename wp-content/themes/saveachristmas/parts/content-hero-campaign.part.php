@@ -33,7 +33,6 @@ if( $fully_booked == 1) {
     $modal_css_class = get_custom_option("site_featured_modal_css_class");
 }
 
-
 /**
  * set all variables default
  */
@@ -41,6 +40,21 @@ $total = 0;
 $total_perc_funded = 0;
 $days_remaining = 0;
 $date = strtotime($end_date);
+$cur_date = time();
+
+/**
+*  checks to see if the current date, is past the end date, and checks 'fully_booked' if so
+*/
+// if ($date <= $cur_date) {
+//     update_post_meta($campaign_id, $fully_booked, '1');
+//     print_r($campaign_options);
+//     // echo $fully_booked;
+//     // exit;
+// } 
+// else {
+//     print_r($campaign_options);
+// //     exit;
+// }
 
 
 /**
