@@ -15,6 +15,7 @@ if( !$myCampaigns->have_posts() ) {
     $goal = 0;
     $campaign_id = '';
     $end_date = 0;
+    $start_date = 0;
 	return;
 
 } else {
@@ -24,6 +25,7 @@ if( !$myCampaigns->have_posts() ) {
 	$campaign_options = maybe_unserialize(get_post_meta($campaign_id, 'campaign_options', true));
 	$goal = $campaign_options['goal'];
 	$end_date = $campaign_options['end-date'];
+    $start_date = $campaign_options['start-date'];
     $fully_booked = $campaign_options['is_fully_booked'];
 }
 
@@ -65,9 +67,22 @@ foreach( $pledges as $donation ) {
 /**
  * generate more variables to get proper progress bar data
  */
+
+$s_date = strtotime($start_date);
+
+if($s_date > time()) {
+    $now = time();
+    $remaining = $s_date - $now;
+    $days_remaining = floor($remaining/ 86400) . " days to start";
+} else{
+    $now = time();
+    $remaining = $date - $now;
+    $days_remaining = floor($remaining / 86400) . "days left";
+}
+
 $total_perc_funded = floor(($total / $goal) * 100); //the percentage of funding of the goal
-$remaining = $date - time();
-$days_remaining = floor($remaining / 86400);
+
+
 ?>
 
 
@@ -77,7 +92,7 @@ $days_remaining = floor($remaining / 86400);
                 <span class="donation-progress-percent"><?php echo $total_perc_funded; ?> % Funded</span>
                 <span class="donation-progress-funded">$<?php echo $total; ?> <em> Raised</em></span>
 
-                <span class="donation-progress-togo"><?php echo $days_remaining; ?> Days left</span>
+                <span class="donation-progress-togo"><?php echo $days_remaining; ?> </span>
 
                 <div class="donation-progress" style="width: <?php if($total_perc_funded > 100){ echo '100';} else{ echo $total_perc_funded;} ?>%"></div>
             </div>
