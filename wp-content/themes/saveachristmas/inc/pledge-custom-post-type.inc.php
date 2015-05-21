@@ -26,7 +26,30 @@ function create_custom_pledges_posttype(){
 		'menu_position' => 5,
 		'register_meta_box_cb' => 'sc_add_pledge_donation_metaboxes',
 		'supports'      => array( 'title', 'editor','custom-fields'),
-		'has_archive'   => true
+		'has_archive'   => true,
+//        'capability_type'       => array('pledge','pledges'),
+//        'map_meta_cap'          => true,
+//        'capabilities'          => array(
+//            //meta_caps don't assign to roles
+//            'edit_post'             => 'edit_pledge',
+//            'delete_post'           => 'delete_pledge',
+//            'read_post'             => 'read_pledge',
+//            //primitive/meta
+//            'create_posts'          => 'create_pledges',
+//            //primitive capabilities outside of meta
+//            'publish_posts'         => 'publish_pledges',
+//            'edit_posts'            => 'edit_pledges',
+//            'edit_others_posts'     => 'edit_others_pledges',
+//            'read_private_posts'    => 'read_private_pledges',
+//            //primitive capabilities used inside of meta
+//            'read'                  =>'read_pledges',
+//            'delete_posts'          => 'delete_pledges',
+//            'delete_others_posts'   =>'delete_others_pledges',
+//            'delete_private_posts'  => 'delete_private_pledges',
+//            'delete_published_posts'=> 'delete_published_pledges',
+//            'edit_private_posts'    => 'edit_private_pledges',
+//            'edit_published_posts'  => 'edit_published_pledges'
+//      )
 	);
 	register_post_type('pledges', $args);
 

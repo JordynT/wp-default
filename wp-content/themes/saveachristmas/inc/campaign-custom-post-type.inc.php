@@ -6,28 +6,51 @@
 function create_custom_posttype()
 {
 	$labels = array(
-		'name'               => _x( 'Campaigns', 'post type general name' ),
-		'singular_name'      => _x( 'Campaign', 'post type singular name' ),
-		 'add_new'            => _x( 'Add New', 'campaign' ),
-		 'add_new_item'       => __( 'Add New Campaign' ),
-		 'edit_item'          => __( 'Edit Campaign' ),
-		 'new_item'           => __( 'New Campaign' ),
-		 'all_items'          => __( 'All Campaigns' ),
-		 'view_item'          => __( 'View Campaign' ),
-		 'search_items'       => __( 'Search Campaigns' ),
-		 'not_found'          => __( 'No campaigns found' ),
-		 'not_found_in_trash' => __( 'No campaigns found in the Trash' ),
-		 'parent_item_colon'  => '',
-		 'menu_name'          => 'Campaigns'
+		'name'                  => _x( 'Campaigns', 'post type general name' ),
+		'singular_name'         => _x( 'Campaign', 'post type singular name' ),
+		 'add_new'              => _x( 'Add New', 'campaign' ),
+		 'add_new_item'         => __( 'Add New Campaign' ),
+		 'edit_item'            => __( 'Edit Campaign' ),
+		 'new_item'             => __( 'New Campaign' ),
+		 'all_items'            => __( 'All Campaigns' ),
+		 'view_item'            => __( 'View Campaign' ),
+		 'search_items'         => __( 'Search Campaigns' ),
+		 'not_found'            => __( 'No campaigns found' ),
+		 'not_found_in_trash'   => __( 'No campaigns found in the Trash' ),
+		 'parent_item_colon'    => '',
+		 'menu_name'            => 'Campaigns'
 	);
 	$args = array(
-		'labels'        => $labels,
-		'description'   => 'Holds our annual campaigns',
-		'public'        => true,
-		'menu_position' => 5,
-		'register_meta_box_cb' => 'sc_add_campaign_metaboxes',
-		'supports'      => array( 'title', 'editor'),
-		'has_archive'   => true
+		'labels'                => $labels,
+		'description'           => 'Holds our annual campaigns',
+		'public'                => true,
+		'menu_position'         => 5,
+		'register_meta_box_cb'  => 'sc_add_campaign_metaboxes',
+		'supports'              => array( 'title', 'editor'),
+		'has_archive'           => true,
+        'capability_type'       => array('campaign','campaigns'),
+        'map_meta_cap'          => true,
+        'capabilities'          => array(
+                //meta_caps don't assign to roles
+                'edit_post'             => 'edit_campaign',
+                'delete_post'           => 'delete_campaign',
+                'read_post'             => 'read_campaign',
+                //primitive/meta
+                'create_posts'          => 'create_campaigns',
+                //primitive capabilities outside of meta
+                'publish_posts'         => 'publish_campaigns',
+                'edit_posts'            => 'edit_campaigns',
+                'edit_others_posts'     => 'edit_others_campaigns',
+                'read_private_posts'    => 'read_private_campaigns',
+                //primitive capabilities used inside of meta
+                'read'                  =>'read_campaigns',
+                'delete_posts'          => 'delete_campaigns',
+                'delete_others_posts'   =>'delete_others_campaigns',
+                'delete_private_posts'  => 'delete_private_campaigns',
+                'delete_published_posts'=> 'delete_published_campaigns',
+                'edit_private_posts'    => 'edit_private_campaigns',
+                'edit_published_posts'  => 'edit_published_campaigns'
+        )
 	);
 	register_post_type('campaigns', $args);
 
