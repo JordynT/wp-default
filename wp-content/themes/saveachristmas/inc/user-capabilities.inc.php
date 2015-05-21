@@ -105,10 +105,14 @@ class sc_roles_capabilities
         }
     }
 
-//    static function add_editor_cpt_capabilities(){
-//
+    static function add_editor_cpt_capabilities(){
+        global $wp_roles;
 //        $editor = get_role('editor');
 //        if(!empty($editor)){
+        if(isset($wp_roles)){
+            $wp_roles->add_cap('editor', 'read_private_campaigns');
+        }
+
 //            $editor->add_cap('read_private_campaigns');
 //            $editor->add_cap('read');
 //            $editor->add_cap('publish_campaigns');
@@ -124,7 +128,7 @@ class sc_roles_capabilities
 //
 //      }
 
-//    }
+    }
 }
 
 
