@@ -74,9 +74,17 @@ class sc_shortcodes{
             <input type="hidden" name="post_content" value="Donation for <?php echo $campaign_title; ?>" >
             <input type="hidden" name="meta_annual-donation-campaign-id" value="<?php echo $campaign_id; ?>" >
             <input type="hidden" name="annual-donation-pledge-option-id" value="24"/>
-            <h4>First Name:**</h4>
-            <p><input type="text" name="post_title" required></p>
-            <h4>Donation:**</h4>
+            <strong>First Name</strong>**
+            <input type="text" name="post_title" required>
+            <strong>Last Name</strong>**
+            <input type="text" name="post_title" required/>
+            <p></p>
+            <strong>Phone Number</strong>**
+            <input type="text" name="post_content" required/>
+            <strong>Email</strong>**
+            <input type="email" name="post_content" required/>
+            <p></p>
+            <strong>Donation</strong>**
             <label><em>please only check one donation</em></label>
             <p>
 

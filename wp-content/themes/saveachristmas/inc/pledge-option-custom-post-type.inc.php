@@ -26,7 +26,7 @@ $args = array(
 'public'        => true,
 'menu_position' => 5,
 'register_meta_box_cb' => 'sc_add_pledge_options_metaboxes',
-'supports'      => array( 'title', 'editor', 'excerpt', 'custom-fields' ),
+'supports'      => array( 'title', 'editor'),
 'has_archive'   => true
 );
 register_post_type('pledge-options', $args);

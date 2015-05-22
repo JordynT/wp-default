@@ -7,10 +7,12 @@ class saveachristmas{
 	function __construct(){
 		include_once(__DIR__.'/inc/register-sidebars.inc.php');
 		include_once(__DIR__.'/inc/campaign-custom-post-type.inc.php');
+        include_once(__DIR__.'/inc/custom_columns.inc.php');
 		include_once(__DIR__.'/inc/pledge-option-custom-post-type.inc.php');
 		include_once(__DIR__.'/inc/pledge-custom-post-type.inc.php');
 		include_once(__DIR__.'/inc/site-options.inc.php');
 		include_once(__DIR__.'/inc/shortcodes.inc.php');
+        include_once(__DIR__.'/inc/user-capabilities.inc.php');
 		if(class_exists('sc_shortcodes')) {
 			new sc_shortcodes();
 		}
@@ -59,5 +61,6 @@ class saveachristmas{
 		remove_menu_page( 'edit.php' );                   //Posts
 		remove_menu_page( 'edit-comments.php' );          //Comments
 	}
+
 } //end of saveachristmas class
 $sc_theme = new saveachristmas();

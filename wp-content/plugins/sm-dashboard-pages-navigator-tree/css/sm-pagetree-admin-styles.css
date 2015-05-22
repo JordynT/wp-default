@@ -1,0 +1,17 @@
+#smPagetree h1,#smPagetree h2,#smPagetree h3,#smPagetree h4,#smPagetree h5,#smPagetree h6 { display:inline; }
+#smPagetree ul, #smPagetree ul li { margin:0; padding:0; }
+#smPagetree ul  { margin-left:10px; padding-bottom:7px; }
+#smPagetree ul li { line-height:2em; }
+#smPagetree .handle { cursor: pointer; }
+#smPagetree .handle-empty, #smPagetree .open, #smPagetree .close { float:left; width:10px; }
+#smPagetree .open, #smPagetree .close { background:url(../images/icons.png) no-repeat 0 8px; }
+#smPagetree .open { background-position:-17px 9px; }
+#smPagetree .pageTitle { color:#000; textdecoration:none; }
+#smPagetree .childCount { color:#8f8e8e; font-size:11px; }
+#smPagetree .status { color:#fff;padding:1px 3px; font-size:11px; -moz-border-radius: 3px 3px 3px 3px; }
+#smPagetree .publish { background: #0C3; display:none; }
+#smPagetree .pending { background:#06F; }
+#smPagetree .draft { background: #F60; }
+#smPagetree .revision { background: #C00;}
+#smPagetree .excluded { background: #000;}
+#smPagetree .private { background: #333;}
