@@ -105,6 +105,10 @@ class sc_roles_capabilities
         }
     }
 
+
+    /**
+     * @Todo add editor capabilities to campaigns
+     */
     static function add_editor_cpt_capabilities(){
         global $wp_roles;
 //        $editor = get_role('editor');
