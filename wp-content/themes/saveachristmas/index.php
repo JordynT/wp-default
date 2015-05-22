@@ -1,5 +1,5 @@
 <?php
-get_header();
-
-get_footer();
+get_header();?>
+ You've made it to the index page :)
+<?php get_footer(); ?>
 

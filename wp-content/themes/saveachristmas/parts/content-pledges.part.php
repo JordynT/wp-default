@@ -136,8 +136,8 @@ $pledges = get_posts( $arguments );
 			<?php endif; ?>
 		</div>
 		<!--end .edd_price_options-->
-        <div class="footer-social">
-<!--            <a class="rss" href="http://saveachristmas.com/feed/"><i class="icon-rss"></i></a>-->
-            <a href="#" class="btt"><i class="icon-up-open-big"></i></a>
-        </div>
+<!--        <div class="footer-social">-->
+<!--<!--            <a class="rss" href="http://saveachristmas.com/feed/"><i class="icon-rss"></i></a>-->-->
+<!--            <a href="#" class="btt"><i class="icon-up-open-big"></i></a>-->
+<!--        </div>-->
 	</div>
