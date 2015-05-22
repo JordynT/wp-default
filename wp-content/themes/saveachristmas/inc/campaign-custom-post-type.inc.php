@@ -111,4 +111,3 @@ function sc_user_can_save_campaign($post_id, $nonce){
     //return info
 	return ! ($is_autosave || $is_revision) && $is_valid_nonce;
 }
-

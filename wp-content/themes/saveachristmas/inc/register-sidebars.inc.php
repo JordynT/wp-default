@@ -3,13 +3,14 @@
  * register sidebar
  */
 
-class sc_sidebar{
-
-    function __construct ()
-    {
-        add_action('widgets_init', array(__CLASS__,'theme_slug_widgets_init'));
-    }
-    static function theme_slug_widgets_init()
+//class sc_sidebar{
+//
+//    function __construct ()
+//    {
+//
+//    }
+    add_action('widgets_init','theme_slug_widgets_init');
+    function theme_slug_widgets_init()
     {
         register_sidebar(array(
             'name' => 'Main Sidebar',
@@ -21,4 +22,4 @@ class sc_sidebar{
             'after_title' => '</h2>',
         ));
     }
-}
+//}
