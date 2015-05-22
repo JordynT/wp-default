@@ -7,6 +7,7 @@ class saveachristmas{
 	function __construct(){
 		include_once(__DIR__.'/inc/register-sidebars.inc.php');
 		include_once(__DIR__.'/inc/campaign-custom-post-type.inc.php');
+        include_once(__DIR__.'/inc/custom_columns.inc.php');
 		include_once(__DIR__.'/inc/pledge-option-custom-post-type.inc.php');
 		include_once(__DIR__.'/inc/pledge-custom-post-type.inc.php');
 		include_once(__DIR__.'/inc/site-options.inc.php');
